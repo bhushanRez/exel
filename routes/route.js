@@ -1,8 +1,9 @@
-const express=require('express')
+const express=require('express');
 const router =express.Router();
 const multer  = require('multer');
 const xlsx = require("xlsx");
-const connection=require('../connection/connection')
+const connection=require('../connection/connection');
+const _ =require('lodash');
 
 
 var storage = multer.diskStorage({   
@@ -74,15 +75,7 @@ const convertArray = (tempData, objectArr) => {
     }
 
   }
-  
-//   const addToDB=(arr,table)=>{
-//       connection.promise().query(`INSERT INTO ${table} values ? `,[arr]).then((res)=>{
-//           console.log(res)
-//       }).catch((err)=>{
-//           console.log(err)
-//       })
-//   }
-  
+
  
   
   
@@ -94,4 +87,5 @@ const convertArray = (tempData, objectArr) => {
     
   });
 
+ 
 module.exports=router;
